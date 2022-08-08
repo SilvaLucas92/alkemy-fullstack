@@ -11,9 +11,6 @@ import {
   } from '@chakra-ui/react'
 import { useNavigate  } from 'react-router-dom';
 const Register = () => {
-    // const [userName, setUserName] = useState('')
-    // const [userEmail, setUserEmail] = useState('')
-    // const [userPassword, setUserPassword] = useState('')
     let navigate = useNavigate()
     const [msgError, setMsgError] = useState('')
     const [userData, setUserData] = useState({
@@ -21,6 +18,7 @@ const Register = () => {
         email: '',
         password: '',
     });
+
     //Update State
     const handleChange = (e) => {
         setUserData({
@@ -28,6 +26,7 @@ const Register = () => {
             [e.target.name]: e.target.value
         })
     }
+    
     //Register user in DB
     const registerUser = async (e) => {
         try {

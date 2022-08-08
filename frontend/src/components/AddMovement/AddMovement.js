@@ -14,8 +14,8 @@ import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../../context';
 import NotLogged from '../NotLogged/NotLogged';
 const AddMovement = () => {
-    const { userLogged } = useGlobalContext();
     let navigate = useNavigate();
+    const { userLogged } = useGlobalContext();
     const [msgError, setMsgError] = useState('');
     const [movementData, setMovementData] = useState({
       concept:'',

@@ -13,10 +13,9 @@ import {
 import { useGlobalContext } from '../../context'
 import { Link } from 'react-router-dom';
 const Login = () => {
-    // const [userEmail, setUserEmail] = useState('');
-    // const [userPassword, setUserPassword] = useState('');
-    const [msgError, setMsgError] = useState('');
+
     let navigate = useNavigate();
+    const [msgError, setMsgError] = useState('');
     const { setUserLogged } = useGlobalContext();
     const [userData, setUserData] = useState({
         email: '',
@@ -36,10 +35,6 @@ const Login = () => {
             if(userData.email === '' || userData.password === '') {
                 return setMsgError('All fields are required')
             } else {
-                // await axios.post('http://localhost:3001/users/login', {
-                //     email: userEmail,
-                //     password: userPassword
-                // })
                 await axios.post('http://localhost:3002/users/login', userData)
                 .then(res => localStorage.setItem('id', res.data.user.id))
                 navigate("/", { replace: true });
@@ -49,6 +44,7 @@ const Login = () => {
             setMsgError(e.response.data.msg)
         }
     }
+    
   return (
     <Container
     py='50px'

@@ -60,7 +60,6 @@ const MovementList = () => {
                 </Select>
             <TableContainer>
                 <Table variant='simple'>
-                    {/* <TableCaption>Last ten movements</TableCaption> */}
                     <Thead>
                     <Tr>
                         <Th>Concept</Th>

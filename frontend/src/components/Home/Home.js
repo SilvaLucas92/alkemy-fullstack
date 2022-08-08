@@ -23,10 +23,12 @@ const Home = () => {
     const { userLogged } = useGlobalContext();
     const [balance, setBalance] = useState(0)
     const [lastTenItems, setLastTenItems] = useState([])
+
     useEffect(() => {
         getAllItems()
         balanceTotal()
-    }, [items, balance]);
+    }, [balance, lastTenItems]);
+    
     //Get all data from DB
     const getAllItems = async () => {
       const movements = await axios.get('http://localhost:3002/movements/');
@@ -68,8 +70,7 @@ const Home = () => {
                         </Tr>
                         </Thead>
                         <Tbody>
-                            {lastTenItems.map((oneItem, i) => {
-                                    console.log(i)
+                            {lastTenItems.map((oneItem) => {
                                     return <Tr key={oneItem.id}>
                                                 <Td>{oneItem.concept || ''}</Td>
                                                 <Td>{oneItem.amount || ''}</Td>

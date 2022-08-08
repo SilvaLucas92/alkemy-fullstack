@@ -6,19 +6,22 @@ import { useGlobalContext } from '../../context';
 const Navbar = () => {
   let navigate = useNavigate()
   const { userLogged, setUserLogged } = useGlobalContext();
+  const [showMenu, setShowMenu] = useState(false);
+  //logged out function
   const loggedOut = () => {
     localStorage.clear()
     setUserLogged(false)
   }
+  //toggle menu
   const closeMenu = () => {
     return setShowMenu(!showMenu)
   }
+  //logout click
   const logoutClick = () => {
     loggedOut()
     setShowMenu(!showMenu)
     navigate("/login", { replace: true })
   }
-  const [showMenu, setShowMenu] = useState(false);
     return (
       <Stack
       as='header'

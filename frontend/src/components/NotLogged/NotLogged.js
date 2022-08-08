@@ -14,7 +14,7 @@ const NotLogged = () => {
         p={5}
         >
             <Heading mb={5}>Welcome!</Heading>
-            <Text my={5}>If you want to start using the app, please login with your email or register!</Text>
+            <Text my={5}>If you want to start using this app, please login or register with your email!</Text>
             <Link to='/login'>
                 <Button mr={5} colorScheme='teal'>
                     Login

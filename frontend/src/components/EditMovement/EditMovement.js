@@ -13,8 +13,8 @@ import {
   import { useGlobalContext } from '../../context';
   import NotLogged from '../NotLogged/NotLogged';
 const EditMovement = () => {
-    const { userLogged } = useGlobalContext();
     let navigate = useNavigate()
+    const { userLogged } = useGlobalContext();
     const { id } = useParams();
     const [msgError, setMsgError] = useState('');
     const [movementData, setMovementData] = useState({
@@ -57,6 +57,7 @@ const EditMovement = () => {
       
       //Modify date
       const date = movementData.date.slice(0, 10);
+      
       if(userLogged) {
         return (
           <Container
